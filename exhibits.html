@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exhibits | SIAC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background-color: #f5f8fa; color: #333; overflow-x: hidden; }
+
+    /* HEADER */
+    header {
+      background: #0077b6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: white; font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: #ffb703; }
+
+    /* GALLERY GRID */
+    .gallery-container {
+      text-align: center;
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .gallery-container h1 {
+      font-size: 2.5rem;
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+    .gallery-container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    /* FULLSCREEN MODE */
+    .fullscreen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 5000;
+    }
+    .fullscreen.active {
+      display: flex;
+    }
+    .fullscreen img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      transition: opacity 0.4s ease;
+    }
+
+    /* FULLSCREEN BUTTONS */
+    .back-fullscreen, .prev-btn, .next-btn {
+      position: absolute;
+      background: #ffb703;
+      color: #023047;
+      border: none;
+      font-weight: bold;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 6000;
+    }
+    .back-fullscreen:hover, .prev-btn:hover, .next-btn:hover {
+      background: #ffd166;
+    }
+
+    .back-fullscreen { top: 20px; left: 20px; }
+    .prev-btn { left: 40px; top: 50%; transform: translateY(-50%); }
+    .next-btn { right: 40px; top: 50%; transform: translateY(-50%); }
+
+    /* BACK TO HOME BUTTON */
+    .back-btn {
+      display: inline-block;
+      margin: 3rem auto;
+      background: #ffb703;
+      color: #023047;
+      padding: 0.8rem 1.6rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #ffd166;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #023047;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img { height: 150px; }
+      .prev-btn, .next-btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+      .back-fullscreen { font-size: 0.9rem; padding: 0.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">SIAC</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exhibits.html" style="color:#ffb703;">Exhibits</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- EXHIBITS SECTION -->
+  <section class="gallery-container">
+    <h1>Our Exhibits</h1>
+    <p>Explore hands-on exhibits that bring science to life! Our interactive displays cover physics, biology, chemistry, robotics, and astronomy — designed to educate and entertain visitors of all ages.</p>
+    <p>Each station lets you experiment, observe, and learn by doing — making every visit to SIAC a unique scientific adventure.</p>
+
+    <div class="gallery" id="gallery">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG_20251108_164451260.jpg" alt="Exhibit 1">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0017.jpg" alt="Exhibit 2">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0022.jpg" alt="Exhibit 3">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0006.jpg" alt="Exhibit 4">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0005%20(1).jpg" alt="Exhibit 5">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0035.jpg" alt="Exhibit 6">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0028.jpg" alt="Exhibit 7">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0027.jpg" alt="Exhibit 8">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0033.jpg" alt="Exhibit 9">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0031.jpg" alt="Exhibit 10">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0023.jpg" alt="Exhibit 11">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0032%20(1).jpg" alt="Exhibit 12">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0026.jpg" alt="Exhibit 13">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0036.jpg" alt="Exhibit 14">
+      <img src="https://uploads.onecompiler.io/443wvsdce/4448df5bt/IMG-20251108-WA0018.jpg" alt="Exhibit 15">
+      <img src="https://uploads.onecompiler.io/443wvsdce/444azaj87/IMG_20251114_124551881_HDR.jpg" alt="Exhibit 16">
+    </div>
+
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </section>
+
+  <!-- FULLSCREEN VIEW -->
+  <div class="fullscreen" id="fullscreen">
+    <button class="back-fullscreen" id="closeFullscreen">⬅ Back</button>
+    <button class="prev-btn" id="prevBtn">Prev</button>
+    <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    <button class="next-btn" id="nextBtn">Next</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 SIAC | Created by SAURABH</p>
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.gallery img');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const closeBtn = document.getElementById('closeFullscreen');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    function openFullscreen(index) {
+      currentIndex = index;
+      fullscreenImage.src = images[currentIndex].src;
+      fullscreen.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullscreenView() {
+      fullscreen.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      fullscreenImage.src = images[currentIndex].src;
+    }
+
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      fullscreenImage.src = images[currentIndex].src;
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => openFullscreen(index));
+    });
+    closeBtn.addEventListener('click', closeFullscreenView);
+    nextBtn.addEventListener('click', showNextImage);
+    prevBtn.addEventListener('click', showPrevImage);
+
+    fullscreen.addEventListener('click', (e) => {
+      if (e.target === fullscreen) closeFullscreenView();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!fullscreen.classList.contains('active')) return;
+      if (e.key === "Escape") closeFullscreenView();
+      if (e.key === "ArrowRight") showNextImage();
+      if (e.key === "ArrowLeft") showPrevImage();
+    });
+  </script>
+
+</body>
+</html>

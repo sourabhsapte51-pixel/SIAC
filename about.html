@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | SIAC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; color: #333; background-color: #f5f8fa; }
+
+    /* HEADER */
+    header {
+      background: #0077b6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* MENU (Only Home + About) */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffb703;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: #ffffff;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #0077b6;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      padding: 4rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      text-align: left;
+    }
+
+    .about-text, .about-image {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .about-text h2 {
+      color: #0077b6;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #023047;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-section { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">SIAC</div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>About SIAC</h1>
+    <p>SIAC (Srujan Science & innovation Activity Center) inspires curiosity and learning through interactive exhibits, science shows, and educational programs.</p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-text">
+      <h2>Our Mission</h2>
+      <p>We believe that hands-on learning builds creativity and critical thinking. Our exhibits encourage visitors to explore science in a fun and interactive way.</p>
+
+      <h2>What We Offer</h2>
+      <p>Science shows, experiments, workshops, and family-friendly activities that make learning fun and exciting.</p>
+
+      <h2>Our Vision</h2>
+      <p>To become a hub for science education where creativity meets innovation.</p>
+    </div>
+
+    <div class="about-image">
+      <img src="https://uploads.onecompiler.io/443wvsdce/443wvu4wz/SIAC%20Wallpaper.jpg" alt="About SIAC">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 SIAC | Created by SAURABH</p>
+  </footer>
+
+</body>
+</html>

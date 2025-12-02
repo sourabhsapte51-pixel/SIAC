@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | SIAC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Nunito', sans-serif; background: #f5f8fa; color: #333; }
+
+    /* Header */
+    header {
+      background: #0077b6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffb703;
+    }
+
+    /* Highlight Events */
+    .active {
+      color: #ffb703;
+    }
+
+    /* Main Section */
+    section {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0077b6;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    a.back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #ffb703;
+      color: #023047;
+      padding: 0.8rem 1.6rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a.back-btn:hover {
+      background: #ffd166;
+    }
+
+    footer {
+      background: #023047;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SIAC</div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Events & Workshops</h1>
+    <p>SIAC organizes engaging science fairs, innovation competitions, and hands-on workshops throughout the year to inspire young minds and promote Science education.</p>
+    <p>Join us for “Science Fest”, “Innovation Challenge”, and “Weekend Lab Series” — where learning meets fun!</p>
+
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+  </section>
+
+  <footer>
+    <p>© 2025 SIAC | Created by SAURABH</p>
+  </footer>
+
+</body>
+</html>
